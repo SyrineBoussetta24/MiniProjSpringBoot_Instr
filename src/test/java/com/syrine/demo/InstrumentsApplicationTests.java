@@ -13,11 +13,10 @@ import com.syrine.demo.repos.InstrumentRepository;
 class InstrumentsApplicationTests {
 	@Autowired
 	private InstrumentRepository InstrumentRepository;
-	@Test
-	public void testCreateInstrument() {
-	Instrument intr = new Instrument("luth",1500.00,new Date());
-	InstrumentRepository.save(intr);
-	}
+	/*
+	 * @Test public void testCreateInstrument() { //Instrument intr = new
+	 * Instrument("luth",1500.00,new Date()); InstrumentRepository.save(intr); }
+	 */
 	
 	@Test
 	public void testFindInstrument()

@@ -16,24 +16,26 @@ import com.syrine.demo.service.InstrumentService;
 public class InstrumentRESTController {
 	@Autowired
 	InstrumentService InstrumentService;
-	@RequestMapping(method = RequestMethod.GET)
+	
+	
+	@RequestMapping(path="all",method = RequestMethod.GET)
 	public List<Instrument> getAllInstruments() {
 		return InstrumentService.getAllInstruments();
 	}
 	
-	@RequestMapping(value="/{id}",method = RequestMethod.GET)
+	@RequestMapping(value="/getbyid/{id}",method = RequestMethod.GET)
 	public Instrument getProduitById(@PathVariable("id") Long id) {
 		return InstrumentService.getInstrument(id);
 	}
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(path="/addintr",method = RequestMethod.POST)
 	public Instrument createProduit(@RequestBody Instrument instrument) {
 	return InstrumentService.saveInstrument(instrument);
 	}
-	@RequestMapping(method = RequestMethod.PUT)
+	@RequestMapping(path="/updateintr",method = RequestMethod.PUT)
 	public Instrument updateInstrument(@RequestBody Instrument instrument) {
 	return InstrumentService.updateInstrument(instrument);
 	}
-	@RequestMapping(value="/{id}",method = RequestMethod.DELETE)
+	@RequestMapping(value="/delintr/{id}",method = RequestMethod.DELETE)
 	public void deleteInstrument(@PathVariable("id") Long id)
 	{
 		InstrumentService.deleteInstrumentById(id);

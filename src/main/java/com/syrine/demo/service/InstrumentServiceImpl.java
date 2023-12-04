@@ -12,6 +12,8 @@ import com.syrine.demo.repos.InstrumentRepository;
 public class InstrumentServiceImpl implements InstrumentService{
 	@Autowired
 	InstrumentRepository InstrumentRepository;
+	
+	
 	@Override
 	public Instrument saveInstrument(Instrument i) {
 	return InstrumentRepository.save(i);

@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 
 import com.syrine.demo.entities.Instrument;
+import com.syrine.demo.entities.Type;
 
 @SpringBootApplication
 public class InstrumentsApplication implements CommandLineRunner {
@@ -20,7 +21,7 @@ public class InstrumentsApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		repositoryRestConfiguration.exposeIdsFor(Instrument.class);
+		repositoryRestConfiguration.exposeIdsFor(Instrument.class,Type.class);
 	}
 
 }
