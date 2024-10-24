@@ -40,13 +40,14 @@ public class SecurityConfig {
 
 
 				.authorizeHttpRequests()
-				.requestMatchers("/api/all/**").hasAnyAuthority("ADMIN","USER")
+				.anyRequest().permitAll();
+				/*.requestMatchers("/api/all/**").hasAnyAuthority("ADMIN","USER")
 				.requestMatchers(HttpMethod.GET,"/api/getbyid/**").hasAnyAuthority("ADMIN","USER")
 				.requestMatchers(HttpMethod.POST,"/api/addintr/**").hasAnyAuthority("ADMIN")
 				.requestMatchers(HttpMethod.PUT,"/api/updateintr/**").hasAuthority("ADMIN")
 				.requestMatchers(HttpMethod.DELETE,"/api/delintr/**").hasAuthority("ADMIN")
 				.anyRequest().authenticated().and()
-				 .addFilterBefore(new JWTAuthorizationFilter(),BasicAuthenticationFilter.class);
+				 .addFilterBefore(new JWTAuthorizationFilter(),BasicAuthenticationFilter.class); */
 		return http.build();
 	}
 	
